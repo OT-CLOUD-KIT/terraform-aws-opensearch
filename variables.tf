@@ -11,6 +11,12 @@ variable "statuses" {
   default     = ["ISSUED"]
 }
 
+variable "aws_kms_key_id" {
+  type        = string
+  description = "(Required) aws kms key id"
+  default     = "alias/aws/es"
+}
+
 # Route 53 data block
 variable "route53_zone" {
   type        = string
@@ -152,7 +158,7 @@ variable "cognito_options" {
   description = "(Optional) Whether to enable Amazon Cognito authentication with Kibana"
   type = list(object({
     enabled          = bool
-    user_pool_id     = string 
+    user_pool_id     = string
     identity_pool_id = string
     role_arn         = string
   }))

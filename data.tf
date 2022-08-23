@@ -8,6 +8,6 @@ data "aws_acm_certificate" "acm" {
 }
 
 data "aws_kms_key" "by_alias" {
-  key_id = "alias/aws/es"
+  key_id = var.aws_kms_key_id
 }
 
