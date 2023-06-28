@@ -1,14 +1,24 @@
 # AWS OpenSearch Terraform Module
+
 [![Opstree Solutions][opstree_avatar]][opstree_homepage]
+
 [Opstree Solutions][opstree_homepage]
+
 [opstree_homepage]: https://opstree.github.io/
 [opstree_avatar]: https://img.cloudposse.com/150x150/https://github.com/opstree.png
+
 OpenSearch is a distributed, open-source search and analytics suite used for a broad set of use cases like real-time application monitoring, log analytics, and website search. OpenSearch provides a highly scalable system for providing fast access and response to large volumes of data with an integrated visualization tool, OpenSearch Dashboards, that makes it easy for users to explore their data. Like Elasticsearch and Apache Solr, OpenSearch is powered by the Apache Lucene search library. OpenSearch and OpenSearch Dashboards were originally derived from Elasticsearch 7.10.2 and Kibana 7.10.2.
+
 This module provides you the functionality to modify your opensearch as per your requirement.
+
 **Note : For more information, you can check example folder.**
+
 ## Terraform versions
+
 Terraform 4.8.0
+
 ## Resources
+
 | Name                                                                                                                               | Type        |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | [aws_elasticsearch_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticsearch_domain)       | Resource    |
@@ -16,7 +26,9 @@ Terraform 4.8.0
 | [aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity)              | Data Source |
 | [aws_kms_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_key)                              | Data Source |
 | [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region)                                | Data Source |
+
 ## Inputs
+
 | Name                             | Description                                                                                                                                                          | Type           | Default | Required |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------- | :------: |
 | iam_aws_service_name             | IAM aws service name                                                                                                                                                 | `string`       |         |   Yes    |
@@ -47,7 +59,9 @@ Terraform 4.8.0
 | encrypt_at_rest                  | Whether to enable encryption at rest. If the encrypt_at_rest block is not provided then this defaults to false                                                       | `bool`         |         |   Yes    |
 | automated_snapshot_start_hour                  | Hour at which automated snapshots are taken, in UTC                                                       | `number`         |         |   no    |
 | availability_zones                  | The number of availability zones for the OpenSearch cluster. Valid values: 1, 2 or 3.                                                       | `number`         |         |   yes    |
+
 ## Output
+
 | Name | Description |
 | ---- | ----------- |
 | cluster_name | The name of the OpenSearch cluster. |
@@ -55,19 +69,26 @@ Terraform 4.8.0
 | cluster_endpoint | The endpoint URL of the OpenSearch cluster. |
 | kibana_endpoint | The endpoint URL of Kibana. |
 ## Tags
+
 - Tags are assigned to resources with name variable as prefix.
 - Additial tags can be assigned by tags variables as defined above.
 - Testing this.
+
 ## Related Projects
+
 Check out these related projects.
+
 - [AWS_NETWORK_SKELETON](https://registry.terraform.io/modules/OT-CLOUD-KIT/vpc/aws/latest)
+
 ## Usage
+
 ```
 locals {
   subnet_ids     = var.subnet_ids
   vpc_id         = var.vpc_id
   vpc_cidr_range = var.vpc_cidr_range
 }
+
 module "opensearch_security_group" {
   source                              = "OT-CLOUD-KIT/security-groups/aws"
   version                             = "1.0.0"
@@ -76,6 +97,7 @@ module "opensearch_security_group" {
   enable_whitelist_ip                 = true
   enable_source_security_group_entry  = false
   create_outbound_rule_with_src_sg_id = false
+
   vpc_id = local.vpc_id
   ingress_rule = {
     rules = {
@@ -96,6 +118,7 @@ module "opensearch_security_group" {
           cidr         = [local.vpc_cidr_range]
           source_SG_ID = []
         }
+
       ]
     }
   }
@@ -124,6 +147,7 @@ module "aws_opensearch" {
   volume_size            = var.volume_size
   volume_type = var.volume_type
   iops        = 3000
+
   automated_snapshot_start_hour    = 0
   enforce_https                    = true
   tls_security_policy              = "Policy-Min-TLS-1-2-2019-07"
@@ -137,8 +161,12 @@ module "aws_opensearch" {
   }]
 }
 ```
+
 **NOTE: You can also refer the variables.tf file under example directory to get the idea on variables define in network_skeleton module.**
+
 ### Contributor
+
 | [Neha Sinha][neha_homepage] |
 | -------------------------------------------------------------------------------------------- |
+
 [neha_homepage]: https://www.linkedin.com/in/neha-sinha-3729b5122/
