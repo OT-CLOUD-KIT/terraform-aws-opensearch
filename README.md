@@ -145,8 +145,8 @@ module "aws_opensearch" {
   warm_instance_type     = var.warm_instance_type
   ebs_enabled            = true
   volume_size            = var.volume_size
-  volume_type = var.volume_type
-  iops        = 3000
+  volume_type            = var.volume_type
+  iops                   = 3000
 
   automated_snapshot_start_hour    = 0
   enforce_https                    = true
