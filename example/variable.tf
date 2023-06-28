@@ -40,7 +40,7 @@ variable "elasticsearch_version" {
 variable "domain" {
   type        = string
   description = "The name of the OpenSearch Domain."
-  default     = "singapore-dev-domain"
+  default     = "example-domain"
 }
 
 
@@ -101,7 +101,7 @@ variable "volume_type" {
 variable "subnet_ids" {
   type        = list(string)
   description = "list of the subnet ids"
-  default = [ "subnet-03c7c7ce047d52069" ]
+  default = [ "your-subnet-id" ]
 
 }
 
@@ -109,7 +109,7 @@ variable "subnet_ids" {
 variable "vpc_id" {
   type        = string
   description = " openvpn id for opensearch sg "
-  default = "vpc-0fa37d681efda900e"
+  default = "your-vpc-id"
 
  
 }
@@ -117,14 +117,8 @@ variable "vpc_id" {
 variable "vpc_cidr_range" {
   type        = string
   description = " vpc cider range for opensearch sg  "
-  default = "172.31.0.0/16"
+  default = "your-vpc-cidr"
 }
-
-
-
-
-
-
 
 variable "volume_type" {
   type        = string
