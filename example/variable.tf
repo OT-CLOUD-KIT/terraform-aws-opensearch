@@ -119,36 +119,3 @@ variable "vpc_cidr_range" {
   description = " vpc cider range for opensearch sg  "
   default = "your-vpc-cidr"
 }
-
-variable "volume_type" {
-  type        = string
-  description = "(Optional) Type of EBS volumes attached to data nodes."
-  default     = "gp3"
-}
-
-
-variable "subnet_ids" {
-  type        = list(string)
-  description = "list of the subnet ids"
-  default     = ["subnet-03c7890047d52069"]
-
-}
-
-
-variable "vpc_id" {
-  type        = string
-  description = " openvpn id for opensearch sg "
-  default     = "vpc-0fa37d690efda900e"
-
-
-}
-
-variable "vpc_cidr_range" {
-  type        = string
-  description = " vpc cider range for opensearch sg  "
-  default     = "172.31.0.0/16"
-}
-
-
-
-
