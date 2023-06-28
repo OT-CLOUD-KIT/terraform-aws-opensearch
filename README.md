@@ -165,6 +165,11 @@ module "aws_opensearch" {
 **NOTE: You can also refer the variables.tf file under example directory to get the idea on variables define in security_group module.**
 
 ### Contributor
+| [![Rishabh Sharma][rishabh_avatar]][rishabh_homepage]<br/>[Rishabh Sharma][rishabh_homepage] |
+| -------------------------------------------------------------------------------------------- |
+
+[rishabh_homepage]: https://www.linkedin.com/in/rishabh-sharma-b4a0b3152
+[rishabh_avatar]: https://gitlab.com/uploads/-/system/user/avatar/9890362/avatar.png?width=200
 
 | [Neha Sinha][neha_homepage] |
 | -------------------------------------------------------------------------------------------- |
