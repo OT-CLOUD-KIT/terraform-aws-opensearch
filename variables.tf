@@ -200,19 +200,19 @@ variable "encrypt_at_rest" {
   default     = true
 }
 variable "custom_endpoint_enabled" {
-  type = bool
+  type  = bool
   description = "Do you want to enable custom endpoint"
   default     =  false
 }
 variable "route53_zone" {
   type        = string
   description = " Domain name of route53 zone"
-  default = "null"
+  default = null
 }
 
 variable "custom_endpoint_certificate_arn" {
   type        = string
   description = "custom domain certificate arn  "
-  default = "null"
+  default = null
 
 }
