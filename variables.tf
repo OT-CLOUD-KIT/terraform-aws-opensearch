@@ -199,3 +199,20 @@ variable "encrypt_at_rest" {
   description = "(Required) Whether to enable encryption at rest. If the encrypt_at_rest block is not provided then this defaults to false."
   default     = true
 }
+variable "custom_endpoint_enabled" {
+  type = bool
+  description = "Do you want to enable custom endpoint"
+  default     =  false
+}
+variable "route53_zone" {
+  type        = string
+  description = " Domain name of route53 zone"
+  default = "null"
+}
+
+variable "custom_endpoint_certificate_arn" {
+  type        = string
+  description = "custom domain certificate arn  "
+  default = "null"
+
+}
