@@ -78,7 +78,7 @@ Terraform 4.8.0
 
 Check out these related projects.
 
-- [AWS_NETWORK_SKELETON](https://registry.terraform.io/modules/OT-CLOUD-KIT/vpc/aws/latest)
+- [AWS_SECURITY_GROUP](https://registry.terraform.io/modules/OT-CLOUD-KIT/security-groups/aws/1.0.0)
 
 ## Usage
 
@@ -162,7 +162,7 @@ module "aws_opensearch" {
 }
 ```
 
-**NOTE: You can also refer the variables.tf file under example directory to get the idea on variables define in network_skeleton module.**
+**NOTE: You can also refer the variables.tf file under example directory to get the idea on variables define in security_group module.**
 
 ### Contributor
 
