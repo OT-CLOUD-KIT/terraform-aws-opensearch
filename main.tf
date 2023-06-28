@@ -90,11 +90,9 @@ CONFIG
   domain_endpoint_options {
     enforce_https       = var.enforce_https
     tls_security_policy = var.enforce_https ? var.tls_security_policy : null
-
-    custom_endpoint_enabled         = false
-    custom_endpoint                 = null
-    custom_endpoint_certificate_arn = null
-  }
+    custom_endpoint_enabled         = var.custom_endpoint_enabled
+    custom_endpoint                 = var.custom_endpoint_enabled ? "${var.domain}.${var.route53_zone}" : null
+    custom_endpoint_certificate_arn = var.custom_endpoint_enabled ? var.custom_endpoint_certificate_arn : null
 
   dynamic "node_to_node_encryption" {
     for_each = var.node_to_node_encryption ? [1] : []
