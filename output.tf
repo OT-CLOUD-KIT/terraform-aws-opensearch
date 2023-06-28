@@ -8,3 +8,12 @@ output "cluster_version" {
   value       = replace(aws_elasticsearch_domain.es.elasticsearch_version, "OpenSearch_", "")
 }
 
+output "kibana_endpoint" {
+  description = "Domain-specific endpoint for kibana without https scheme."
+  value       = aws_elasticsearch_domain.es.kibana_endpoint
+}
+
+output "cluster_endpoint" {
+  description = "Domain-specific endpoint used to submit index, search, and data upload requests."
+  value       = aws_elasticsearch_domain.es.endpoint
+}
