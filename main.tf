@@ -119,3 +119,4 @@ CONFIG
   depends_on = [aws_iam_service_linked_role.es]
 }
 
+}
