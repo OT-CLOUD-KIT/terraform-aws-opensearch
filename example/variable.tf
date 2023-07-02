@@ -1,15 +1,3 @@
-variable "acm_certificate_domain" {
-  type        = string
-  description = "(optional) describe your variable"
-  default     =  null
-}
-
-variable "statuses" {
-  type        = list(string)
-  description = "(optional) describe your variable"
-  default     = []
-}
-
 variable "name" {
   description = "Name of the opensearch  to be created"
   type        = string
@@ -24,12 +12,6 @@ variable "tags" {
     "env"   = "dev"
   }
 }
-variable "aws_acm_certificate_arn" {
-  type        = string
-  description = "(arn of custom domain"
-  default     =  null
-}
-
 
 variable "elasticsearch_version" {
   type        = string
@@ -101,7 +83,7 @@ variable "volume_type" {
 variable "subnet_ids" {
   type        = list(string)
   description = "list of the subnet ids"
-  default = [ "your-subnet-id" ]
+  default = [ "your-subnet_id" ]
 
 }
 

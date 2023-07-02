@@ -46,8 +46,6 @@ module "aws_opensearch" {
   }]
   name                   = var.name
   tags                   = var.tags
-  acm_certificate_domain = var.acm_certificate_domain
-  statuses               = var.statuses
   domain                 = var.domain
   elasticsearch_version  = var.elasticsearch_version
   availability_zones     = var.availability_zones

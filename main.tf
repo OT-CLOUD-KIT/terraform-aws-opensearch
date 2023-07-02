@@ -1,6 +1,3 @@
-resource "aws_iam_service_linked_role" "es" {
-  aws_service_name = var.iam_aws_service_name
-}
 
 resource "aws_elasticsearch_domain" "es" {
   domain_name           = var.domain
@@ -93,7 +90,7 @@ CONFIG
     custom_endpoint_enabled         = var.custom_endpoint_enabled
     custom_endpoint                 = var.custom_endpoint_enabled ? "${var.domain}.${var.route53_zone}" : null
     custom_endpoint_certificate_arn = var.custom_endpoint_enabled ? var.custom_endpoint_certificate_arn : null
-
+  }
   dynamic "node_to_node_encryption" {
     for_each = var.node_to_node_encryption ? [1] : []
     content {
@@ -116,7 +113,6 @@ CONFIG
     var.tags,
   )
 
-  depends_on = [aws_iam_service_linked_role.es]
+  
 }
 
-}

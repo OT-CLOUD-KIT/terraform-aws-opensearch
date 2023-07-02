@@ -1,23 +1,3 @@
-# ACM data block
-variable "acm_certificate_domain" {
-  type        = string
-  description = "(Required) Domain of ACM"
-  default     = "www.mydevopsprojects.co.in"
-}
-
-variable "statuses" {
-  type        = list(string)
-  description = "(Required) Status of ACM"
-  default     = ["ISSUED"]
-}
-
-
-
-variable "iam_aws_service_name" {
-  type        = string
-  description = "(Required) IAM aws service name"
-  default     = "es.amazonaws.com"
-}
 
 # OpenSearch Variables
 variable "name" {
