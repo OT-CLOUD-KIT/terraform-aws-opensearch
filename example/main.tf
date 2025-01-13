@@ -69,6 +69,7 @@ module "aws_opensearch" {
   node_to_node_encryption          = true
   encrypt_at_rest                  = true
   advanced_security_options_enable = true
+  anonymous_auth_enabled           = true
   internal_user_database_enabled   = true
   master_user_options = [{
     master_user_name     = "admin"

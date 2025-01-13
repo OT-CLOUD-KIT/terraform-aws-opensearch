@@ -108,7 +108,7 @@ CONFIG
       kms_key_id = data.aws_kms_key.by_alias.arn
     }
   }
-
+  }
   tags = merge(
     {
       Name = format("%s", var.name)
@@ -118,4 +118,3 @@ CONFIG
 
   depends_on = [aws_iam_service_linked_role.es]
 }
-
