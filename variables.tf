@@ -11,8 +11,6 @@ variable "statuses" {
   default     = ["ISSUED"]
 }
 
-
-
 variable "iam_aws_service_name" {
   type        = string
   description = "(Required) IAM aws service name"
@@ -154,6 +152,12 @@ variable "cognito_options" {
 variable "advanced_security_options_enable" {
   type        = bool
   description = "(Required, Forces new resource) Whether advanced security is enabled."
+  default     = false
+}
+
+variable "anonymous_auth_enabled" {
+  type        = bool
+  description = "(Optional, Defaukt: false) Whether Anonymous auth is enabled"
   default     = false
 }
 
